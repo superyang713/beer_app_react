@@ -1,25 +1,21 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import beerData from "./data";
+import Header from "./Header";
+import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      beer: beerData,
+    };
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Header text="This is the header"/>
+        <h1>Hello {this.state.beer["Light Lager"].data[1].name}</h1>
       </div>
     );
   }
