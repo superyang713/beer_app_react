@@ -151,7 +151,7 @@
             "ABV_max": 5.7
         },
         {
-            "category": null,
+            "category": "Dark Lager",
             "name": "Dark American Lager",
             "id": "4A",
             "OG_min": 1.044,
@@ -166,7 +166,7 @@
             "ABV_max": 6.0
         },
         {
-            "category": null,
+            "category": "Dark Lager",
             "name": "Munich Dunkel",
             "id": "4B",
             "OG_min": 1.048,
@@ -181,7 +181,7 @@
             "ABV_max": 5.6
         },
         {
-            "category": null,
+            "category": "Dark Lager",
             "name": "Schwarzbier (Black Beer)",
             "id": "4C",
             "OG_min": 1.046,
