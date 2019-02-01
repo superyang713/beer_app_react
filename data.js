@@ -1,5 +1,5 @@
 {
-    "beer": [
+    "beerData": [
         {
             "category": "Light Lager",
             "name": "Lite American Lager",

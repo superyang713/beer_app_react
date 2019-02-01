@@ -81,7 +81,7 @@ for page in target_pages:
             ABV_min=ABV_min,
             ABV_max=ABV_max)
 
-        data["beer"].append(beer._asdict())
+        data["beerData"].append(beer._asdict())
 
 with open("data.js", "w") as fout:
     json.dump(data, fout)
