@@ -1,21 +1,29 @@
 import React, {Component} from "react";
 import beerData from "./data";
-import Header from "./Header";
+import Logo from "./component/Logo/Logo";
+import Header from "./component/Header/Header";
+import Form from "./component/Form/Form.js";
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      beer: beerData,
+      beer: beerData.beerData,
     };
   }
+
+  getBeer = e => {
+    e.preventDefault();
+    console.log("hello");
+  };
 
   render() {
     return (
       <div>
-        <Header text="This is the header"/>
-        <h1>Hello {this.state.beer["Light Lager"].data[1].name}</h1>
+        <Header />
+        <Logo />
+        <Form getBeer={this.getBeer} />
       </div>
     );
   }
