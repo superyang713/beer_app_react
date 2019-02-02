@@ -1,14 +1,19 @@
 import React, {Component} from "react";
+
 import beerData from "./data";
 import Logo from "./component/Logo/Logo";
 import Header from "./component/Header/Header";
-import Form from "./component/Form/Form.js";
+import Form from "./component/Form/Form";
+import SearchResult from "./component/SearchResult/SearchResult";
+
 import "./App.css";
+
 
 class App extends Component {
   state = {
     beer: [],
-    result: {},
+    result: [],
+    searchStyle: {},
   };
 
   getBeer = e => {
@@ -20,6 +25,7 @@ class App extends Component {
       SRM: e.target.elements.SRM.value,
       ABV: e.target.elements.ABV.value,
     };
+
     const result = this.state.beer.filter(item => (
       submitData.OG >= item.OG_min && submitData.OG <= item.OG_max &&
         submitData.FG >= item.FG_min && submitData.FG <= item.FG_max &&
@@ -27,11 +33,17 @@ class App extends Component {
         submitData.SRM >= item.SRM_min && submitData.SRM <= item.SRM_max &&
         submitData.ABV >= item.ABV_min && submitData.ABV <= item.ABV_max 
     ));
-    this.setState({result: result[0]});
+    this.setState({
+      result: result,
+      searchStyle: {display: "block"}
+    });
   };
 
   componentDidMount = () => {
-    this.setState({beer: beerData.beerData});
+    this.setState({
+      beer: beerData.beerData,
+      searchStyle: {display: "none"},
+    });
   }
 
   render() {
@@ -40,7 +52,7 @@ class App extends Component {
         <Header />
         <Logo />
         <Form getBeer={this.getBeer} />
-        {this.state.result ? <h1>{this.state.result.name}</h1> : <h1>No result</h1>}
+        <SearchResult result={this.state.result} style={this.state.searchStyle}/>
       </div>
     );
   }

@@ -1,0 +1,10 @@
+.search__container {
+    display: block;
+    background-color: whitesmoke;
+    padding: 0;
+    margin: 1em auto;
+}
+
+.search__row {
+    padding: .5em;
+}
